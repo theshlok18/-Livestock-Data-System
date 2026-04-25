@@ -1,11 +1,12 @@
 services:
-  # ── Backend (Flask API) ──────────────────────────────────────────────────
+
+  # ── Backend ──────────────────────────────────────────────────────────────
   - type: web
     name: livestock-backend
     runtime: python
-    rootDir: backend
+    rootDir: livestock-app/backend
     buildCommand: pip install -r requirements.txt && python init_db.py
-    startCommand: gunicorn app:create_app() --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120 --log-level info
     envVars:
       - key: SECRET_KEY
         generateValue: true
@@ -14,17 +15,17 @@ services:
       - key: FLASK_ENV
         value: production
       - key: FRONTEND_URL
-        value: https://livestock-frontend.onrender.com   # update after deploy
+        value: https://livestock-frontend.onrender.com
       - key: DB_PATH
-        value: /opt/render/project/src/livestock.db
+        value: /opt/render/project/src/livestock-app/backend/livestock.db
       - key: UPLOAD_FOLDER
-        value: /opt/render/project/src/uploads
+        value: /opt/render/project/src/livestock-app/backend/uploads
 
-  # ── Frontend (React/Vite) ────────────────────────────────────────────────
+  # ── Frontend ──────────────────────────────────────────────────────────────
   - type: web
     name: livestock-frontend
     runtime: static
-    rootDir: frontend
+    rootDir: livestock-app/frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
