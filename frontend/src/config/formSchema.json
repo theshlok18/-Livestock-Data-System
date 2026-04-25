@@ -1,0 +1,108 @@
+{
+  "sections": [
+    {
+      "id": "basic_info",
+      "title_key": "sec_basic_info",
+      "color": "#2d5a27",
+      "fields": [
+        { "key": "tag_no",      "name": "tag_no",      "type": "text",   "required": true,  "readonly": true },
+        { "key": "record_date", "name": "record_date", "type": "date",   "required": true  },
+        { "key": "owner_name",  "name": "owner_name",  "type": "text",   "required": true  },
+        { "key": "mobile_no",   "name": "mobile_no",   "type": "tel",    "required": false },
+        { "key": "aadhar_no",   "name": "aadhar_no",   "type": "text",   "required": false },
+        { "key": "village",     "name": "village",     "type": "text",   "required": false }
+      ]
+    },
+    {
+      "id": "animal_details",
+      "title_key": "sec_animal",
+      "color": "#1565c0",
+      "fields": [
+        { "key": "animal_type", "name": "animal_type", "type": "dropdown", "required": true,
+          "options_keys": ["cow","buffalo","goat","sheep","other"] },
+        { "key": "breed",       "name": "breed",       "type": "text",     "required": true  },
+        { "key": "age",         "name": "age",         "type": "text",     "required": false },
+        { "key": "body_weight", "name": "body_weight", "type": "number",   "required": false, "step": "0.1" }
+      ]
+    },
+    {
+      "id": "reproduction",
+      "title_key": "sec_reproduction",
+      "color": "#6a1b9a",
+      "fields": [
+        { "key": "pregnancy_status", "name": "pregnancy_status", "type": "dropdown", "required": false,
+          "options_keys": ["not_pregnant","pregnant","dry","in_heat"] },
+        { "key": "pregnancy_month",  "name": "pregnancy_month",  "type": "number",   "required": false, "conditional": "pregnancy_status=pregnant" },
+        { "key": "dry_date",         "name": "dry_date",         "type": "date",     "required": false },
+        { "key": "calving_date",     "name": "calving_date",     "type": "date",     "required": false }
+      ]
+    },
+    {
+      "id": "milk_production",
+      "title_key": "sec_milk",
+      "color": "#0277bd",
+      "fields": [
+        { "key": "milk_per_day", "name": "milk_per_day", "type": "number", "required": false, "step": "0.01" },
+        { "key": "fat",          "name": "fat",          "type": "number", "required": false, "step": "0.01" },
+        { "key": "snf",          "name": "snf",          "type": "number", "required": false, "step": "0.01" },
+        { "key": "rate",         "name": "rate",         "type": "number", "required": false, "step": "0.01" },
+        { "key": "expenses",     "name": "expenses",     "type": "number", "required": false, "step": "0.01" }
+      ]
+    },
+    {
+      "id": "feeding_details",
+      "title_key": "sec_feeding",
+      "color": "#c4622d",
+      "type": "feeding"
+    },
+    {
+      "id": "performance",
+      "title_key": "sec_performance",
+      "color": "#2e7d32",
+      "fields": [
+        { "key": "milk_increase",     "name": "milk_increase",     "type": "yesno",  "required": false },
+        { "key": "milk_increase_val", "name": "milk_increase_value","type": "number", "required": false, "step": "0.1", "conditional": "milk_increase=yes" },
+        { "key": "challenge_feeding", "name": "challenge_feeding", "type": "number", "required": false, "step": "0.5", "min": "0.5", "max": "2.0" }
+      ]
+    },
+    {
+      "id": "health_breeding",
+      "title_key": "sec_health",
+      "color": "#b71c1c",
+      "fields": [
+        { "key": "health_status",  "name": "health_status",  "type": "dropdown", "required": false,
+          "options_keys": ["healthy","sick","under_treatment","recovered"] },
+        { "key": "vaccination",    "name": "vaccination",    "type": "text",     "required": false },
+        { "key": "deworming",      "name": "deworming",      "type": "text",     "required": false },
+        { "key": "lactation_no",   "name": "lactation_no",   "type": "number",   "required": false }
+      ]
+    },
+    {
+      "id": "calf_details",
+      "title_key": "sec_calf",
+      "color": "#e65100",
+      "fields": [
+        { "key": "calf_tag", "name": "calf_tag", "type": "text",     "required": false },
+        { "key": "calf_sex", "name": "calf_sex", "type": "dropdown", "required": false,
+          "options_keys": ["male","female"] }
+      ]
+    },
+    {
+      "id": "body_measurements",
+      "title_key": "sec_body",
+      "color": "#4a148c",
+      "fields": [
+        { "key": "body_condition_score", "name": "body_condition_score", "type": "dropdown", "required": false,
+          "options_keys": ["1","2","3","4","5"] }
+      ]
+    },
+    {
+      "id": "remarks",
+      "title_key": "sec_remarks",
+      "color": "#37474f",
+      "fields": [
+        { "key": "notes", "name": "notes", "type": "textarea", "required": false, "wide": true }
+      ]
+    }
+  ]
+}

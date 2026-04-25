@@ -1,0 +1,97 @@
+{
+  "feed_data": [
+    {
+      "feed_class": "Concentrate",
+      "subclasses": [
+        {
+          "feed_subclass": "Bran",
+          "feeds": [
+            { "feed_name": "Maize Bran",          "unit": "Kg" },
+            { "feed_name": "Rice Bran 16% Oil",    "unit": "Kg" },
+            { "feed_name": "Rice Bran Deoiled",    "unit": "Kg" },
+            { "feed_name": "Wheat Bran",           "unit": "Kg" }
+          ]
+        },
+        {
+          "feed_subclass": "Chunni",
+          "feeds": [
+            { "feed_name": "Bengalgram Chunni",    "unit": "Kg" },
+            { "feed_name": "Blackgram Chunni",     "unit": "Kg" },
+            { "feed_name": "Moong Chunni",         "unit": "Kg" },
+            { "feed_name": "Red Gram Chunni",      "unit": "Kg" },
+            { "feed_name": "Tur Chunni",           "unit": "Kg" }
+          ]
+        },
+        {
+          "feed_subclass": "Oil Cake",
+          "feeds": [
+            { "feed_name": "Coconut Oil Cake",     "unit": "Kg" },
+            { "feed_name": "Cotton Seed Cake",     "unit": "Kg" },
+            { "feed_name": "Groundnut Cake",       "unit": "Kg" },
+            { "feed_name": "Soybean Meal",         "unit": "Kg" },
+            { "feed_name": "Sunflower Cake",       "unit": "Kg" }
+          ]
+        },
+        {
+          "feed_subclass": "Grain",
+          "feeds": [
+            { "feed_name": "Maize Grain",          "unit": "Kg" },
+            { "feed_name": "Sorghum",              "unit": "Kg" },
+            { "feed_name": "Barley",               "unit": "Kg" }
+          ]
+        }
+      ]
+    },
+    {
+      "feed_class": "Roughage",
+      "subclasses": [
+        {
+          "feed_subclass": "Grass",
+          "feeds": [
+            { "feed_name": "Elephant Grass",       "unit": "Kg" },
+            { "feed_name": "Guinea Grass",         "unit": "Kg" },
+            { "feed_name": "Napier Grass",         "unit": "Kg" },
+            { "feed_name": "Rhodes Grass",         "unit": "Kg" }
+          ]
+        },
+        {
+          "feed_subclass": "Dry Fodder",
+          "feeds": [
+            { "feed_name": "Paddy Straw",          "unit": "Kg" },
+            { "feed_name": "Wheat Straw",          "unit": "Kg" },
+            { "feed_name": "Sorghum Stover",       "unit": "Kg" },
+            { "feed_name": "Maize Stover",         "unit": "Kg" }
+          ]
+        },
+        {
+          "feed_subclass": "Silage",
+          "feeds": [
+            { "feed_name": "Maize Silage",         "unit": "Kg" },
+            { "feed_name": "Sorghum Silage",       "unit": "Kg" },
+            { "feed_name": "Napier Silage",        "unit": "Kg" }
+          ]
+        }
+      ]
+    },
+    {
+      "feed_class": "Mineral & Supplement",
+      "subclasses": [
+        {
+          "feed_subclass": "Mineral Mix",
+          "feeds": [
+            { "feed_name": "Mineral Mixture",      "unit": "g" },
+            { "feed_name": "Calcium Powder",       "unit": "g" },
+            { "feed_name": "Salt (NaCl)",          "unit": "g" }
+          ]
+        },
+        {
+          "feed_subclass": "Vitamin",
+          "feeds": [
+            { "feed_name": "Vitamin AD3E",         "unit": "g" },
+            { "feed_name": "Vitamin B Complex",    "unit": "g" }
+          ]
+        }
+      ]
+    }
+  ]
+}
