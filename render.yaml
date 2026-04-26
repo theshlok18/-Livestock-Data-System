@@ -1,13 +1,15 @@
 services:
 
-  # ── Backend ──────────────────────────────────────────────────────────────
+  # ── Backend (Flask + Gunicorn) ────────────────────────────────────────────
   - type: web
     name: livestock-backend
     runtime: python
     rootDir: livestock-app/backend
-    buildCommand: pip install -r requirements.txt && python init_db.py
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt && python init_db.py
     startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120 --log-level info
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
       - key: SECRET_KEY
         generateValue: true
       - key: JWT_SECRET_KEY
@@ -21,7 +23,7 @@ services:
       - key: UPLOAD_FOLDER
         value: /opt/render/project/src/livestock-app/backend/uploads
 
-  # ── Frontend ──────────────────────────────────────────────────────────────
+  # ── Frontend (React/Vite static) ─────────────────────────────────────────
   - type: web
     name: livestock-frontend
     runtime: static
